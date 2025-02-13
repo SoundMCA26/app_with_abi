@@ -1,0 +1,69 @@
+function add(arr: number[]): number {
+
+    if (arr.length < 4) {
+      console.log("Array has fewer than 4 elements, returning sum of all elements.");
+    }
+  
+   let sum: number = 0;
+   for(let i=0; i < 4; i++){
+    sum = sum + arr[i];
+   }
+    
+    return sum;
+  }
+
+  function product(arr: number[]): number {
+    if(arr.length < 4 ) {
+        console.log("Array has fewer than 4 elements, returning sum of all elements.");
+    }
+    let mul: number = 1;
+
+    for(let i=0; i<4; i++){
+        mul = mul * arr[i];
+    }
+
+    return mul;
+  }
+
+  function sort1(arr: number[]){
+
+    for(let i=0; i<4; i++){
+        for(let j=i+1; j<4; j++){
+            if(arr[j] < arr[i]){
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    console.log("Ascending:-\n");
+
+
+    for(let i=0;i<4;i++){
+        console.log(arr[i]);
+    }
+
+    for(let i=0; i<4; i++){
+        for(let j=i+1; j<4; j++){
+            if(arr[j] > arr[i]){
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    console.log("desending:-\n");
+    for(let i=0;i<4; i++){
+        console.log(arr[i]);
+    }
+
+  }
+  
+  const numbers = [5, 10, 15, 20, 25];
+  const addition_res = add(numbers);
+  const product_res = product(numbers);
+  sort1(numbers);
+  
+  console.log(`The sum of the first four elements is: ${addition_res}`);
+  console.log(`The product of the first four elements is: ${product_res}`);
+  
